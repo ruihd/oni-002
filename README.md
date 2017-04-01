@@ -79,3 +79,49 @@ int main() {
     }
 	return 0;
 }
+
+
+
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    
+    int N;
+    cin >> N;
+    int o = 0;
+    int p = 0;
+    int x;
+    int t = 0;
+    int s = 0;
+    vector <int> v;
+    
+    for(int a = 0; a < N; a++){
+        cin >> x;
+        v.push_back(x);
+    }
+    
+    sort(v.begin(), v.end());
+    
+    for(int b = 0; b < N; b++){
+        t = 0;
+        for(int c = 0; c < N; c++){
+            for(int d = 1; d < v[N-1]; d++){
+                o = v[c];
+                p = v[b];
+                if(o*d == p){
+                    t = t +1;
+                }
+            }
+        }
+        if(s < t){
+        s = t;
+        }
+    }
+    
+    cout << s << endl;
+}
