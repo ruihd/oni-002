@@ -45,3 +45,37 @@ int main() {
     cout << soma << endl;
 	return 0;
 }
+
+
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    
+    int N;
+    int Q;
+    cin >> N >> Q;
+    int x;
+    int p;
+    int l;
+    int total = 0;
+    vector<int> n;
+    for(int a = 0; a < N*4; a++){
+        cin >> x; 
+        n.push_back(x);
+    }
+    for(int b = 0; b < Q; b++){
+        cin >> p;
+        for(int c = 0; c < N; c++){
+            if(p < n[c*4+2] && p >= n[c*4]){
+            l = n[c*4+3] - n[c*4+1];
+            total = total + l;
+            }
+        }
+        cout << total << endl;
+        total = 0;
+    }
+	return 0;
+}
